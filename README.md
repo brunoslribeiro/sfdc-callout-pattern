@@ -29,3 +29,6 @@ callout.send();
 ```
 ### Author
 Bruno Smith Lopes Ribeiro - Salesforce Developer - bruno_smith10@hotmail.com
+
+### Contributors
+Allan Oricil - Salesforce Consultant
