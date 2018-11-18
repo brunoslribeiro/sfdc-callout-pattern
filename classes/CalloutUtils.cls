@@ -113,6 +113,10 @@ public virtual class CalloutUtils {
         if(!String.isNotBlank(this.endpoint) && !String.isEmpty(this.endpoint)){
 		  throw new CalloutUtilsException('Endpoint not found!');           
         }
+		
+		if(this.timeout!=null && this.timeout > 120000){
+		  throw new CalloutUtilsException('Timeout maximum exceeded!');           
+		}
                    	        
         this.request = new HttpRequest();      
         this.request.setEndpoint(this.endpoint);      
