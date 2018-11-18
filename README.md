@@ -4,7 +4,6 @@ This design pattern was thinking of Salesforce to improve the organization of ex
 
 ## Example
 
-`		
 Map<String,List<String>> parameters = new Map<String,List<String>>();
 Map<String,String> headers = new Map<String,String>();
 
@@ -22,11 +21,6 @@ callout
     .body('body')
     .bodyToJson('')
     .timeout(10000);
-`
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
 
 ## Authors
 
