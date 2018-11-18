@@ -4,7 +4,7 @@ This design pattern was thinking of Salesforce to improve the organization of ex
 
 ## Example
 
-		
+`		
 Map<String,List<String>> parameters = new Map<String,List<String>>();
 Map<String,String> headers = new Map<String,String>();
 
@@ -22,6 +22,7 @@ callout
     .body('body')
     .bodyToJson('')
     .timeout(10000);
+`
 
 ## Contributing
 
