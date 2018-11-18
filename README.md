@@ -1,6 +1,6 @@
 # Salesforce - Apex - Simple Designer Pattern - Callouts
 
-[![Build Status](https://travis-ci.org/joemccann/dillinger)
+[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)]()
 
 This design pattern was thinking of Salesforce to improve the organization of external calls built on Apex. And it helped me out there to improve the simplicity of building a callout call.
 
