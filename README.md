@@ -1,9 +1,11 @@
 # Salesforce - Apex - Simple Designer Pattern - Callouts
 
+[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
+
 This design pattern was thinking of Salesforce to improve the organization of external calls built on Apex. And it helped me out there to improve the simplicity of building a callout call.
 
-## Example
-
+### Example
+```apex
 Map<String,List<String>> parameters = new Map<String,List<String>>();
 Map<String,String> headers = new Map<String,String>();
 
@@ -21,7 +23,8 @@ callout
     .body('body')
     .bodyToJson('')
     .timeout(10000);
+```
+### Author
+Bruno Smith Lopes Ribeiro - Salesforce Developer - bruno_smith10@hotmail.com
+Certified Platform Developer I
 
-## Authors
-
-* **Bruno Smith Lopes Ribeiro** - bruno_smith10@hotmail.com
