@@ -5,23 +5,23 @@ This design pattern was thinking of Salesforce to improve the organization of ex
 ## Example
 
 		
-	Map<String,List<String>> parameters = new Map<String,List<String>>();
-        Map<String,String> headers = new Map<String,String>();
-        
-        parameters.put('parameter', new List<String>{'','','',''});                
-        headers.put('header', 'header');
-        
-        callout
-            .endPoint('http://www.google.com.br')        	      
-            .method('POST')            
-            .addHeader('Content-Type','application/json')
-            .addParameter('parameter1','')
-            .addParameter(parameters)
-            .addHeader('header1','valueHeader')
-            .addHeader(headers)
-            .body('body')
-            .bodyToJson('')
-            .timeout(10000);
+Map<String,List<String>> parameters = new Map<String,List<String>>();
+Map<String,String> headers = new Map<String,String>();
+
+parameters.put('parameter', new List<String>{'','','',''});                
+headers.put('header', 'header');
+
+callout
+    .endPoint('http://www.google.com.br')        	      
+    .method('POST')            
+    .addHeader('Content-Type','application/json')
+    .addParameter('parameter1','')
+    .addParameter(parameters)
+    .addHeader('header1','valueHeader')
+    .addHeader(headers)
+    .body('body')
+    .bodyToJson('')
+    .timeout(10000);
 
 ## Contributing
 
