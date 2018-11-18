@@ -26,4 +26,3 @@ callout
 ```
 ### Author
 Bruno Smith Lopes Ribeiro - Salesforce Developer - bruno_smith10@hotmail.com
-https://www.linkedin.com/in/bruno-smith-lopes-ribeiro-%E2%98%81%EF%B8%8F-b2872255/
