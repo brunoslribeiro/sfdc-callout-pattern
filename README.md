@@ -23,6 +23,9 @@ callout
     .body('body')
     .bodyToJson('')
     .timeout(10000);
+
+callout.send();
+
 ```
 ### Author
 Bruno Smith Lopes Ribeiro - Salesforce Developer - bruno_smith10@hotmail.com
