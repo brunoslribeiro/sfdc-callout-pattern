@@ -4,6 +4,7 @@
    <types>
 		<members>CalloutUtils</members> 		
 		<members>CalloutUtilsTst</members> 								
+		<members>CalloutUtilsMock</members> 								
 		<name>ApexClass</name>
 	</types>    
 
