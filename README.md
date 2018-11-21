@@ -20,8 +20,7 @@ callout
     .addParameter(parameters)
     .addHeader('header1','valueHeader')
     .addHeader(headers)
-    .body('body')
-    .bodyToJson('')
+    .body('body')    
     .timeout(10000);
 
 callout.send();
