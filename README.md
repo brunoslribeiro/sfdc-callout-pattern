@@ -25,7 +25,7 @@ callout
     .body('body')    
     .timeout(10000);
 
-callout.send();
+ HttpResponse res = callout.send();
 
 ```
 ### Author
