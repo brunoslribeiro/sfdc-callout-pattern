@@ -1,4 +1,4 @@
-# Salesforce - Simple Callout Pattern - Apex
+# Salesforce - Simple Apex Rest Callout Pattern
 
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://github.com/brunoslribeiro/salesforceapexcalloutsutils)
 
