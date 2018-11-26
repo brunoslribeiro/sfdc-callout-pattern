@@ -1,4 +1,4 @@
-# Salesforce - Apex - Simple Designer Pattern - Callouts
+# Salesforce - Simple Callout Pattern - Apex
 
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://github.com/brunoslribeiro/salesforceapexcalloutsutils)
 
