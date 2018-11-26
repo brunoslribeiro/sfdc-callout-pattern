@@ -12,6 +12,8 @@ Map<String,String> headers = new Map<String,String>();
 parameters.put('parameter', new List<String>{'','','',''});                
 headers.put('header', 'header');
 
+CalloutUtils callout = new CalloutUtils();
+
 callout
     .endPoint('http://www.google.com.br')        	      
     .method('POST')            
