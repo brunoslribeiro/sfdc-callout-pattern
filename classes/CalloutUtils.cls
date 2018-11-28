@@ -105,20 +105,22 @@ public virtual class CalloutUtils {
         return queryString;
     }
     
+    
+    
     public virtual CalloutUtils builder(){
-        if(!String.isNotBlank(this.method) && !String.isEmpty(this.method)){
+        if(!String.isNotBlank(this.method) || String.isEmpty(this.method)){
 		  throw new CalloutUtilsException('Method not found!');           
         }
 		
-        if(!String.isNotBlank(this.endpoint) && !String.isEmpty(this.endpoint)){
+        if(!String.isNotBlank(this.endpoint) || String.isEmpty(this.endpoint)){
 		  throw new CalloutUtilsException('Endpoint not found!');           
         }
-		
-		if(this.timeout!=null && this.timeout > 120000){
+        
+        if(this.timeout!=null && this.timeout > 120000){
 		  throw new CalloutUtilsException('Timeout maximum exceeded!');           
 		}
-                   	        
-        this.request = new HttpRequest();      
+                      	        
+        this.request = new HttpRequest();              
         this.request.setEndpoint(this.endpoint);      
         this.request.setMethod(this.method);      
         
@@ -146,12 +148,8 @@ public virtual class CalloutUtils {
     public virtual HttpResponse send() {               
         try {       
             this.builder();
-            System.debug(this.request);
-            if(request==null){
-               throw new CalloutUtilsException('Request failed, because not builder request!');      
-            }
-         	response = httpInstance.send(this.request);             
-        } catch(System.Exception ex) {
+            response = httpInstance.send(this.request);             
+        } catch(CalloutUtilsException ex) {
             throw new CalloutUtilsException(ex.getMessage());    
         }
         return response;
