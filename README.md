@@ -1,6 +1,6 @@
-# Salesforce - Apex - Simple Designer Pattern - Callouts
+# Salesforce - Simple Apex Rest Callout Pattern
 
-[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
+[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://github.com/brunoslribeiro/salesforceapexcalloutsutils)
 
 This design pattern was thinking of Salesforce to improve the organization of external calls built on Apex. And it helped me out there to improve the simplicity of building a callout call.
 
@@ -12,6 +12,8 @@ Map<String,String> headers = new Map<String,String>();
 parameters.put('parameter', new List<String>{'','','',''});                
 headers.put('header', 'header');
 
+CalloutUtils callout = new CalloutUtils();
+
 callout
     .endPoint('http://www.google.com.br')        	      
     .method('POST')            
@@ -20,11 +22,10 @@ callout
     .addParameter(parameters)
     .addHeader('header1','valueHeader')
     .addHeader(headers)
-    .body('body')
-    .bodyToJson('')
+    .body('body')    
     .timeout(10000);
 
-callout.send();
+ HttpResponse res = callout.send();
 
 ```
 ### Author
