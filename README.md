@@ -27,7 +27,52 @@ callout
 
  HttpResponse res = callout.send();
 
+```                                                                                                  
+### Description of methods
+
 ```
+endPoint(String endpoint) @endpoint 
+Specifies the endpoint for this request - Required
+```
+
+```
+method(String method) @method 
+Sets the type of method to be used for the HTTP request - Required 
+(Examples:DELETE,GET,HEAD,POST,PUT,TRACE) - Required
+```
+
+```
+addHeader(String key,String body) 
+Adds a header in the request. 
+```
+
+```
+addHeader(Map<String,List<String>> collectionHeaders)
+Adds one or more header through the request.
+```
+
+```
+addParameter(String key,String value)
+Adds a parameter to the URL
+Example:http://requesturl.com/myendpoint?key=value
+```
+
+```
+addParameter(Map<String,List<String>> collectionParameters) 
+Dynamically adds the parameters in the URL, respecting the other values ​​added.
+Example:http://requesturl.com/myendpoint?key1=Apex,SFDC,Rest
+```
+
+```
+body(String body)
+Adds in the request body. (Example: String Json, String xml)
+```
+
+```
+send()
+Performs the construction and call of the requisition.
+```
+
 ### Author
 Bruno Smith Lopes Ribeiro - Salesforce Developer - bruno_smith10@hotmail.com
 
