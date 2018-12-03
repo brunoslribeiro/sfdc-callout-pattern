@@ -31,12 +31,12 @@ callout
 ### Description of methods
 
 ```
-endPoint(String endpoint) @endpoint 
+endPoint(String endpoint) 
 Specifies the endpoint for this request - Required
 ```
 
 ```
-method(String method) @method 
+method(String method) 
 Sets the type of method to be used for the HTTP request - Required 
 (Examples:DELETE,GET,HEAD,POST,PUT,TRACE) - Required
 ```
