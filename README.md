@@ -33,3 +33,10 @@ Bruno Smith Lopes Ribeiro - Salesforce Developer - bruno_smith10@hotmail.com
 
 ### Contributors
 Allan Oricil - Salesforce Consultant
+
+### Sources
+https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_classes_restful_http.htm
+https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_classes_restful_http_httprequest.htm#apex_classes_restful_http_httprequest
+https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_classes_restful_http_httpresponse.htm#apex_classes_restful_http_httpresponse
+https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_classes_restful_http_http.htm#apex_classes_restful_http_http
+
