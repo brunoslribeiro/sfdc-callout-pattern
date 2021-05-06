@@ -64,6 +64,18 @@ Example:http://requesturl.com/myendpoint?key1=Apex,SFDC,Rest
 ```
 
 ```
+addParameterBody(String key,String value)
+Adds a parameter to the Body - Multipart Form Data
+Example:Body:"key=value&key=value"
+```
+
+```
+addParameterBody(Map<String,List<String>> collectionParameters) 
+Dynamically adds the parameters in the Body, respecting the other values ​​added -  Multipart Form Data
+Example:Body:"key1=Apex,SFDC,Rest"
+```
+
+```
 body(String body)
 Adds in the request body. (Example: String Json, String xml)
 ```

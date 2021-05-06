@@ -7,7 +7,8 @@ public class CalloutUtilsTst {
    	 	CalloutUtils callout = new CalloutUtils();
         Test.setMock(HttpCalloutMock.class, new CalloutUtilsMock());
 		
-		Map<String,List<String>> parameters = new Map<String,List<String>>();
+		    Map<String,List<String>> parameters = new Map<String,List<String>>();
+        Map<String,List<String>> parametersBody = new Map<String,List<String>>();
         Map<String,String> headers = new Map<String,String>();
         
         parameters.put('parameter', new List<String>{'','','',''});                
@@ -19,6 +20,8 @@ public class CalloutUtilsTst {
             .addHeader('Content-Type','application/json')
             .addParameter('parameter1','')
             .addParameter(parameters)
+            .addParameterBody('parameter1','parameter1')
+            .addParameterBody(parameters)
             .addHeader('header1','valueHeader')
             .addHeader(headers)
             .body('body')

@@ -11,12 +11,14 @@ public virtual class CalloutUtils {
     private Integer timeout;
     private Map<String,String> headers;
     private Map<String,List<String>> parameters;
+    private Map<String,List<String>> parametersBody;
     
     public CalloutUtils(){		
         response = new HttpResponse();
         httpInstance = new Http(); 
         headers = new Map<String,String>();
         parameters = new Map<String,List<String>>();
+        parametersBody = new Map<String,List<String>>();
     }
     
     public virtual CalloutUtils endPoint(String endpoint){
@@ -66,6 +68,22 @@ public virtual class CalloutUtils {
         
         return this;
     }
+
+    public virtual CalloutUtils addParameterBody(Map<String,List<String>> collectionParameters){
+        for(String parameter : collectionParameters.keySet() ) {                        
+            this.parametersBody.put(parameter,collectionParameters.get(parameter));
+        }               
+        return this;
+    }
+
+    public virtual CalloutUtils addParameterBody(String key,String value){
+       if(parametersBody.get(key) == null ) {
+           parametersBody.put(key,  new List<String>());
+        }
+        
+        parametersBody.get(key).add(value);
+        return this;
+    }
     
     public virtual CalloutUtils addParameter(Map<String,List<String>> collectionParameters){
         for(String parameter : collectionParameters.keySet() ) {                        
@@ -84,6 +102,20 @@ public virtual class CalloutUtils {
         }
         return parameter;
     }
+
+    private virtual String buildStringParameter(String value,Map<String,List<String>> parameters){
+        Integer count = 0;  
+        for(String key : parameters.keySet() ) {                                                                 
+            if(count==0){
+                value += key + '=' + buildParameter(key,parameters.get(key));    
+            }else{
+                value += '&' + key + '=' + buildParameter(key,parameters.get(key));    
+            }
+            count++;                
+        }
+        
+        return value;
+    }
         
     public virtual String buildQueryStringParameter(){
         
@@ -91,22 +123,23 @@ public virtual class CalloutUtils {
                 
         if(!parameters.isEmpty()){
             queryString  += '?';        
-            Integer count = 0;  
-            for(String key : parameters.keySet() ) {                                                                 
-                if(count==0){
-                	queryString += key + '=' + buildParameter(key,parameters.get(key));    
-                }else{
-                    queryString += '&' + key + '=' + buildParameter(key,parameters.get(key));    
-                }
-                count++;                
-            }
+            queryString = buildStringParameter(queryString,parameters);
         }   
               
         return queryString;
     }
-    
-    
-    
+
+    public virtual String buildBodyParameter(){
+        
+        String bodyParameters = '';
+                 
+        if(!parametersBody.isEmpty()){
+            bodyParameters = buildStringParameter(bodyParameters,parametersBody);
+        }   
+              
+        return bodyParameters;
+    }
+
     public virtual CalloutUtils builder(){
         if(!String.isNotBlank(this.method) || String.isEmpty(this.method)){
 		  throw new CalloutUtilsException('Method not found!');           
@@ -140,6 +173,10 @@ public virtual class CalloutUtils {
         
         if(!parameters.isEmpty()){
             this.request.setEndpoint(buildQueryStringParameter());
+        }
+
+        if(!parametersBody.isEmpty()){
+            this.request.setBody(buildBodyParameter());
         }
                         
         return this;
